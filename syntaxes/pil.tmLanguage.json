@@ -1,0 +1,210 @@
+{
+  "name": "PIL",
+  "scopeName": "source.pil",
+  "patterns": [
+    {
+      "name": "comment.line.number-sign.pil",
+      "match": "#.*$"
+    },
+    {
+      "name": "string.quoted.double.pil",
+      "begin": "\"",
+      "end": "\"|$",
+      "patterns": [
+        {
+          "name": "constant.character.escape.pil",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.single.pil",
+      "begin": "'",
+      "end": "'|$",
+      "patterns": [
+        {
+          "name": "constant.character.escape.pil",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "include": "#evaluator"
+    },
+    {
+      "name": "keyword.control.directive.pil",
+      "match": "@[A-Za-z_][A-Za-z0-9_-]*"
+    },
+    {
+      "name": "meta.declaration.members.pil",
+      "begin": "\\b(struct|enum)\\s+(?:(array)\\s+)?([A-Za-z_][A-Za-z0-9_-]*)\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type.pil"
+        },
+        "2": {
+          "name": "storage.modifier.pil"
+        },
+        "3": {
+          "name": "entity.name.type.pil"
+        },
+        "4": {
+          "name": "punctuation.section.pil"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.pil"
+        }
+      },
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.pil",
+          "match": "#.*$"
+        },
+        {
+          "name": "string.quoted.double.pil",
+          "begin": "\"",
+          "end": "\"|$",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pil",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.pil",
+          "begin": "'",
+          "end": "'|$",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pil",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "include": "#evaluator"
+        },
+        {
+          "name": "constant.numeric.pil",
+          "match": "\\b[0-9]+(?:\\.[0-9]*)?"
+        },
+        {
+          "name": "keyword.operator.pil",
+          "match": "\\.\\.\\.|\\*\\*|&&|\\|\\||[+*/%^~!<>=&|-]"
+        },
+        {
+          "name": "variable.other.member.pil",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_-]*"
+        },
+        {
+          "name": "punctuation.section.pil",
+          "match": ","
+        }
+      ]
+    },
+    {
+      "match": "\\b(struct|enum)\\s+(?:(array)\\s+)?([A-Za-z_][A-Za-z0-9_-]*)",
+      "captures": {
+        "1": {
+          "name": "storage.type.pil"
+        },
+        "2": {
+          "name": "storage.modifier.pil"
+        },
+        "3": {
+          "name": "entity.name.type.pil"
+        }
+      }
+    },
+    {
+      "name": "entity.name.function.pil",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_-]*(?=\\s*\\()"
+    },
+    {
+      "name": "entity.name.label.pil",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_-]*(?=\\s*:)"
+    },
+    {
+      "name": "variable.language.register.pil",
+      "match": "(?:[Rr])?\\$"
+    },
+    {
+      "name": "keyword.declaration.pil",
+      "match": "\\b(?:local|global|const|enum|struct|array)(?![A-Za-z0-9_-])"
+    },
+    {
+      "name": "support.function.builtin.pil",
+      "match": "(?<![A-Za-z0-9_-])(?:string\\-new|string\\-format|string\\-repeat|string\\-clear|string\\-memfree|string\\-empty|string\\-size|string\\-capacity|string\\-reserve|string\\-resize|string\\-set|string\\-at|string\\-back|string\\-front|string\\-push|string\\-insert|string\\-pop|string\\-erase|string\\-free|string\\-split|string\\-concat|string\\-substr|string\\-count|string\\-reverse|string\\-find|string\\-rfind|string\\-find\\-first\\-of|string\\-find\\-first\\-not\\-of|string\\-find\\-last\\-of|string\\-find\\-last\\-not\\-of|string\\-replace|string\\-replace\\-all|string\\-contains|string\\-erase\\-all|string\\-starts\\-with|string\\-ends\\-with|string\\-trim|string\\-to\\-lower|string\\-to\\-upper|string\\-copy|array\\-new|array\\-fill|array\\-iota|array\\-clear|array\\-memfree|array\\-empty|array\\-size|array\\-capacity|array\\-reserve|array\\-resize|array\\-set|array\\-at|array\\-back|array\\-front|array\\-push|array\\-insert|array\\-pop|array\\-erase|array\\-free|array\\-deep\\-free|array\\-join|array\\-concat|array\\-slice|array\\-shuffle|array\\-sort|array\\-count|array\\-reverse|array\\-find|array\\-contains|array\\-erase\\-all|array\\-copy|array\\-deep\\-copy|map\\-new|map\\-erase|map\\-set|map\\-at|map\\-at\\-or|map\\-contains|map\\-size|map\\-empty|map\\-clear|map\\-keys|map\\-values|map\\-merge|map\\-free|map\\-deep\\-free|map\\-copy|map\\-deep\\-copy|incr|decr|sum|add|sub|mul|div|mod|fmod|pow|neg|sqrt|cbrt|sin|cos|tan|asin|acos|atan|atan2|asinh|acosh|atanh|sinh|cosh|tanh|abs|min|max|clamp|sign|trunc|ceil|floor|round|exp|ln|log|log2|log10|lerp|step\\-towards|seed\\-random|random|randf\\-range|randi\\-range|gcd|lcm|hypot|hypot3|bit\\-and|bit\\-or|bit\\-xor|bit\\-not|bit\\-shl|bit\\-shr|bit\\-count|bit\\-test|bit\\-set|bit\\-clear|bit\\-toggle|file\\-open|file\\-close|file\\-read|file\\-readln|file\\-readch|file\\-read\\-bytes|file\\-eof|file\\-write|file\\-writeln|file\\-flush|file\\-tell|file\\-seek|file\\-seek\\-rel|file\\-seek\\-end|path\\-exists|path\\-is\\-file|path\\-is\\-dir|path\\-size|path\\-modified\\-time|path\\-create\\-dir|path\\-remove|path\\-remove\\-all|path\\-copy|path\\-move|path\\-join|path\\-filename|path\\-stem|path\\-extension|path\\-parent|path\\-absolute|path\\-normalize|dir\\-list|dir\\-list\\-recursive|os\\-name|os\\-cwd|os\\-set\\-cwd|os\\-env\\-get|os\\-env\\-set|os\\-exec|os\\-exit\\-code|flush|printch|print|println|printf|printfln|read|readln|readch|setecho|le|gr|leeq|greq|eq|neq|and|or|not|goto|jmp|jmpn|jmptable|call|func\\-call|return|catch|assert|warn|error|exit|stack\\-depth|stack\\-name|stack\\-line|stack\\-file|stack\\-trace|typeof|is\\-num|is\\-float|is\\-int|is\\-char|is\\-string|is\\-dynamic\\-string|is\\-constant\\-string|is\\-array|is\\-map|is\\-file\\-handle|is\\-reg|is\\-function|is\\-label|is\\-struct|is\\-of\\-struct|is\\-null|is\\-inf|is\\-nan|to\\-int|to\\-float|to\\-char|time|unix\\-time|date|sleep|swap|set|valtable|table\\-contains|reg\\-size|reg\\-at|reg\\-set|return\\-reg\\-size|return\\-reg\\-at|return\\-reg\\-set|return\\-count|func\\-arity|func\\-variadic|func\\-arg\\-match|make|free|deep\\-free|copy|deep\\-copy|size|at|store)(?![A-Za-z0-9_-])"
+    },
+    {
+      "name": "constant.numeric.pil",
+      "match": "\\b[0-9]+(?:\\.[0-9]*)?"
+    },
+    {
+      "name": "keyword.operator.pil",
+      "match": "\\.\\.\\.|\\*\\*|&&|\\|\\||[+*/%^~!<>=&|-]"
+    },
+    {
+      "name": "punctuation.section.pil",
+      "match": "[\\[\\](),.:;]"
+    }
+  ],
+  "repository": {
+    "evaluator": {
+      "name": "meta.constant-evaluator.pil",
+      "begin": "\\[",
+      "end": "\\]",
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.pil",
+          "match": "#.*$"
+        },
+        {
+          "name": "string.quoted.double.pil",
+          "begin": "\"",
+          "end": "\"|$",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pil",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.pil",
+          "begin": "'",
+          "end": "'|$",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pil",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "support.function.builtin.evaluator.pil",
+          "match": "\\b(?:abs|min|max|sqrt|cbrt|sin|cos|tan|asin|acos|atan|atan2|asinh|acosh|atanh|sinh|cosh|tanh|clamp|sign|trunc|ceil|floor|round|exp|ln|log|log2|log10|lerp|if|pi|tau|e|hypot|hypot3|gcd|lcm)(?![A-Za-z0-9_-])(?=\\s*\\()"
+        },
+        {
+          "name": "constant.numeric.pil",
+          "match": "\\b[0-9]+(?:\\.[0-9]*)?"
+        },
+        {
+          "name": "keyword.operator.pil",
+          "match": "\\.\\.\\.|\\*\\*|&&|\\|\\||[+*/%^~!<>=&|-]"
+        },
+        {
+          "include": "#evaluator"
+        },
+        {
+          "name": "punctuation.section.pil",
+          "match": "[(),]"
+        }
+      ]
+    }
+  }
+}
