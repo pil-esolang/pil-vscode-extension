@@ -1,0 +1,84 @@
+{
+	"name": "pil-vscode",
+	"displayName": "PIL Language",
+	"description": "PIL syntax highlighting, diagnostics, completion, parameter hints and symbol navigation.",
+	"version": "1.0.0",
+	"publisher": "PIL",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.95.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pil-esolang/pil-vscode-extension.git"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"PIL",
+		"esolang"
+	],
+	"icon": "pil_logo.png",
+	"main": "./dist/extension.js",
+	"activationEvents": [
+		"onLanguage:pil"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "pil",
+				"aliases": [
+					"PIL",
+					"pil"
+				],
+				"extensions": [
+					".pil"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "pil",
+				"scopeName": "source.pil",
+				"path": "./syntaxes/pil.tmLanguage.json"
+			}
+		],
+		"configuration": {
+			"title": "PIL",
+			"properties": {
+				"pil.workingDirectory": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "Directory used to resolve all relative include paths. Relative settings resolve from the workspace folder; empty uses the workspace folder or standalone file directory."
+				},
+				"pil.entryFile": {
+					"type": "string",
+					"default": "",
+					"scope": "resource",
+					"description": "Optional PIL entry file used to select a program when multiple independent programs include the same file. Relative paths resolve from the workspace folder."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"test": "node --import tsx --test test/*.test.ts",
+		"build": "node esbuild.mjs",
+		"vscode:prepublish": "npm run build",
+		"package": "vsce package --no-dependencies",
+		"import-upstream": "node scripts/import-upstream.mjs",
+		"check-upstream": "node scripts/import-upstream.mjs --check",
+		"compare-with-pil": "node --import tsx scripts/compare-with-pil.mts"
+	},
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"@types/vscode": "1.95.0",
+		"@vscode/vsce": "^3.6.0",
+		"esbuild": "^0.25.0",
+		"tsx": "^4.20.0",
+		"typescript": "^5.8.0"
+	}
+}
