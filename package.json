@@ -2,7 +2,7 @@
 	"name": "pil-vscode",
 	"displayName": "PIL Language",
 	"description": "PIL syntax highlighting, diagnostics, completion, parameter hints and symbol navigation.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "PIL",
 	"license": "MIT",
 	"engines": {

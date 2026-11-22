@@ -46,7 +46,7 @@ export function lex(text: string): Token[] {
 			i++;
 			while (i < text.length && /[A-Za-z0-9_-]/.test(text[i])) i++;
 			push("identifier", start);
-		} else if (/[0-9]/.test(ch)) {
+		} else if (/[0-9]/.test(ch) || (i + 1 < text.length && (ch == '-' || ch =='+') && /[0-9]/.test(text[i + 1]))) {
 			i++;
 			while (i < text.length && /[0-9.]/.test(text[i])) i++;
 			push("number", start);

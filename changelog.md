@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.0
+- Added signed number literals and fixed some error diagnostics.
+
 ## 1.0.0
 - Initial version made for PIL interpreter 1.0.0.
 - Includes descriptions and support for all 268 built-ins and 38 evaluator functions.

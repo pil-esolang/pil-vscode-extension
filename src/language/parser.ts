@@ -72,19 +72,8 @@ export function scanValue(tokens: Token[], start: number, stop?: (index: number)
 
 export const isValueStart = (t: Token) => ["identifier", "number", "string", "character"].includes(t.kind) || t.text === "[";
 
-function invalidMessage(t: Token, next?: Token): string {
-	if (t.text === "@") {
-		return next?.text === "include"
-			? `Unexpected character '@'. Directives were removed from PIL: write include "file.pil" without the '@'`
-			: "Unexpected character '@'. PIL no longer has directives";
-	}
-	if (t.text === "$") return "Unexpected character '$'. Registers were removed from PIL; use local variables";
-	return `Unexpected character '${t.text}'`;
-}
-
 /** Why `t` cannot begin a value. PIL has no signed number literals: `-1` must be written `[-1]`. */
 function notAValue(t: Token, next?: Token): string {
-	if ((t.text === "-" || t.text === "+") && next?.kind === "number") return `Unexpected '${t.text}': PIL has no signed number literals, write [${t.text}${next.text}] instead`;
 	return `Unexpected ${describe(t)}: expected a value`;
 }
 
@@ -188,7 +177,7 @@ export function parseDocument(uri: string, text: string, version: number): Parse
 	// ---- lexical checks -------------------------------------------------------------------------------------
 	tokens.forEach((t, k) => {
 		if (t.kind === "invalid") {
-			issue(invalidMessage(t, tokens[k + 1]), t);
+			issue(`Unexpected character '${t.text}'`, t);
 		} else if (t.kind === "number" && t.text.split(".").length > 2) {
 			issue(`Number '${t.text}' contains multiple decimal points`, t);
 		} else if (t.kind === "string" || t.kind === "character") {

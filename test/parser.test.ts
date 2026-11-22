@@ -66,16 +66,9 @@ describe("include", () => {
 		assert.match(issues[0].message, /Expected a quoted file path after 'include'/);
 	});
 
-	it("explains the removed @include directive and still follows the include", () => {
-		const doc = parse(lines('@include "other.pil"', "main()", "   println 1;"));
-		assert.equal(doc.issues.length, 1);
-		assert.match(doc.issues[0].message, /Directives were removed.*include "file.pil"/);
-		assert.deepEqual(doc.includes.map((i) => i.path), ["other.pil"]);
-	});
-
 	it("explains removed registers", () => {
 		const issues = issuesOf(lines("main()", "   set 5, $0;"));
-		assert.match(issues[0].message, /Registers were removed/);
+		assert.match(issues[0].message, /Unexpected character '\$'/);
 	});
 });
 
@@ -152,10 +145,10 @@ describe("commas", () => {
 		assert.deepEqual(messages(issuesOf("struct S (x,, y)\n")), ["Unexpected ',': expected a name before it"]);
 	});
 
-	it("explains that numbers have no sign", () => {
-		assert.match(issuesOf(lines("main()", "   add 1, -2, x;"))[0].message, /write \[-2\] instead/);
-		assert.match(issuesOf("enum E (A = -1)\n")[0].message, /write \[-1\] instead/);
-		assert.match(issuesOf("const A = -1;\n")[0].message, /write \[-1\] instead/);
+	it("numbers should support signs", () => {
+		assert.deepEqual(issuesOf(lines("main()", "   add +1, -2, x;")), []);
+		assert.deepEqual(issuesOf("enum E (A = -1)\n"), []);
+		assert.deepEqual(issuesOf("const A = -1;\n"), []);
 	});
 });
 

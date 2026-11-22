@@ -117,9 +117,9 @@ describe("const, global and enum values", () => {
 		await fails("main()\n   local x;\n   const c = x;\n", /Variable 'x' does not exist.*never locals/);
 	});
 
-	it("rejects const without a value, negative literals and a trailing comma", async () => {
+	it("rejects const without a value, a trailing comma", async () => {
 		await fails("const a;\n" + MAIN, /Constants require/i);
-		await fails("const a = -1;\n" + MAIN, /-/);
+		await clean("const a = -1;\n" + MAIN);
 		await clean("const a = [-1];\n" + MAIN);
 		await fails("const a = 1,;\n" + MAIN, /Expected a name after ','/);
 		await fails("global g = 1,;\n" + MAIN, /Expected a name after ','/);
