@@ -2,7 +2,6 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { buildProject } from "./helpers";
 
-// Every expectation here was checked against the real interpreter (`pil compile`); see scripts/compare-with-pil.mts.
 const MAIN = "main()\n   println 1;\n";
 
 async function check(source: string, extra: Record<string, string> = {}) {
@@ -81,9 +80,9 @@ describe("argument counts", () => {
 		await fails("main()\n   println;\n", /'println' expects at least 1 argument, but got 0/);
 	});
 
-	it("counts a trailing comma as nothing, like the interpreter", async () => {
-		await clean("main()\n   println 1,;\n");
-		await fails("main()\n   size 1,;\n", /'size' expects 2 arguments, but got 1/);
+	it("does not allow trailing commas", async () => {
+		await fails("main()\n   println 1,;\n", /Trailing ',' before ';'/);
+		await fails("main()\n   local x;\n   array-new x, 1, 2, 3,;\n", /Trailing ',' before ';'/);
 	});
 
 	it("checks the callee of call", async () => {
@@ -125,10 +124,9 @@ describe("const, global and enum values", () => {
 		await fails("global g = 1,;\n" + MAIN, /Expected a name after ','/);
 	});
 
-	it("accepts a trailing comma after local, which PIL allows", async () => {
-		const r = await check("main()\n   local a, b,;\n   println a, b;\n");
-		assert.deepEqual(r.errors, []);
-		assert.ok(r.warnings.some((m) => /Trailing ','/.test(m)));
+	it("does not accept trailing commas", async () => {
+		await fails("main()\n   local a, b,;\n   println a, b;\n", /Expected a name after ','/);
+		await fails("main()\n   local a,;\n", /Expected a name after ','/);
 	});
 
 	it("needs enumeration values to be numbers", async () => {

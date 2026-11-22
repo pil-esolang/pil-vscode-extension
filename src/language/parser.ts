@@ -355,8 +355,6 @@ export function parseDocument(uri: string, text: string, version: number): Parse
 				}
 				if (t.text === ";") {
 					if (!lastComma) issue(`Expected a name after '${first.text}'`, first);
-					// PIL accepts `local a, b,;` but rejects the same trailing comma after const/global
-					else if (kind === "local") issue("Trailing ',' before ';'", lastComma, "warning");
 					else issue("Expected a name after ','", lastComma);
 					terminatorIndex = j;
 					break;
@@ -455,8 +453,7 @@ export function parseDocument(uri: string, text: string, version: number): Parse
 					break;
 				}
 				if (t.text === ";") {
-					// PIL accepts `name a, b,;` without complaint, but it is almost always a typo
-					if (lastComma) issue("Trailing ',' before ';'", lastComma, "warning");
+					if (lastComma) issue("Trailing ',' before ';'", lastComma);
 					terminated = true;
 					break;
 				}

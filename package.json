@@ -68,10 +68,7 @@
 		"test": "node --import tsx --test test/*.test.ts",
 		"build": "node esbuild.mjs",
 		"vscode:prepublish": "npm run build",
-		"package": "vsce package --no-dependencies",
-		"import-upstream": "node scripts/import-upstream.mjs",
-		"check-upstream": "node scripts/import-upstream.mjs --check",
-		"compare-with-pil": "node --import tsx scripts/compare-with-pil.mts"
+		"package": "vsce package --no-dependencies"
 	},
 	"devDependencies": {
 		"@types/node": "^22.0.0",

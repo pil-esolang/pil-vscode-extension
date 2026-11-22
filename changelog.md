@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.1.0
-- Added signed number literals and fixed some error diagnostics.
+- Added signed number literals, made trailing commas a strict error for locals, globals and function calls and fixed some error diagnostics.
 
 ## 1.0.0
 - Initial version made for PIL interpreter 1.0.0.

@@ -127,10 +127,11 @@ describe("commas", () => {
 		assert.deepEqual(messages(issuesOf(lines("main()", "   add , 1, 2, x;"))), ["Unexpected ',': expected a value first"]);
 	});
 
-	it("warns about a trailing comma, which PIL silently accepts", () => {
-		const issues = issuesOf(lines("main()", "   println 1,;"));
-		assert.deepEqual(messages(issues), ["Trailing ',' before ';'"]);
-		assert.equal(issues[0].severity, "warning");
+	it("does not allow trailing commas", () => {
+		assert.deepEqual(messages(issuesOf(lines("global x, y,;", "main()"))), ["Expected a name after ','"]);
+		assert.deepEqual(messages(issuesOf(lines("const z = 1, y = 2,;", "main()"))), ["Expected a name after ','"]);
+		assert.deepEqual(messages(issuesOf(lines("main()", "local x, y,;"))), ["Expected a name after ','"]);
+		assert.deepEqual(messages(issuesOf(lines("main()", "local x;", "add 1, 2, x,;"))), ["Trailing ',' before ';'"]);
 	});
 
 	it("checks parameter lists", () => {
