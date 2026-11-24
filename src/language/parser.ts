@@ -72,7 +72,6 @@ export function scanValue(tokens: Token[], start: number, stop?: (index: number)
 
 export const isValueStart = (t: Token) => ["identifier", "number", "string", "character"].includes(t.kind) || t.text === "[";
 
-/** Why `t` cannot begin a value. PIL has no signed number literals: `-1` must be written `[-1]`. */
 function notAValue(t: Token, next?: Token): string {
 	return `Unexpected ${describe(t)}: expected a value`;
 }

@@ -2,6 +2,8 @@
 
 ## 1.1.0
 - Added signed number literals, made trailing commas a strict error for locals, globals and function calls and fixed some error diagnostics.
+- Updated built-in library to PIL interpreter 1.1.0.
+- Optimized the large table sizes, which drastically reduces extension's size.
 
 ## 1.0.0
 - Initial version made for PIL interpreter 1.0.0.

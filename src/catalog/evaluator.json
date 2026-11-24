@@ -1,767 +1,153 @@
-[
-  {
-    "name": "abs",
-    "implementation": "MEE:abs",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Get the absolute value\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "abs(N)"
-  },
-  {
-    "name": "min",
-    "implementation": "MEE:min",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N1",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N1 (input)"
-      },
-      {
-        "name": "N2",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N2 (input)"
-      }
-    ],
-    "documentation": "Get the minimum value of the two\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "min(N1, N2)"
-  },
-  {
-    "name": "max",
-    "implementation": "MEE:max",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N1",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N1 (input)"
-      },
-      {
-        "name": "N2",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N2 (input)"
-      }
-    ],
-    "documentation": "Get the maximum value of the two\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "max(N1, N2)"
-  },
-  {
-    "name": "sqrt",
-    "implementation": "MEE:sqrt",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Square root\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "sqrt(N)"
-  },
-  {
-    "name": "cbrt",
-    "implementation": "MEE:cbrt",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Cube root\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "cbrt(N)"
-  },
-  {
-    "name": "sin",
-    "implementation": "MEE:sin",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Sine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "sin(N)"
-  },
-  {
-    "name": "cos",
-    "implementation": "MEE:cos",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Cosine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "cos(N)"
-  },
-  {
-    "name": "tan",
-    "implementation": "MEE:tan",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Tangent\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "tan(N)"
-  },
-  {
-    "name": "asin",
-    "implementation": "MEE:asin",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Arcsine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "asin(N)"
-  },
-  {
-    "name": "acos",
-    "implementation": "MEE:acos",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Arccosine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "acos(N)"
-  },
-  {
-    "name": "atan",
-    "implementation": "MEE:atan",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Arctangent\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "atan(N)"
-  },
-  {
-    "name": "atan2",
-    "implementation": "MEE:atan2",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "Y",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "Y (input)"
-      },
-      {
-        "name": "X",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "X (input)"
-      }
-    ],
-    "documentation": "Arctangent of Y / X using signs of argments to determine the correct quadrant\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "atan2(Y, X)"
-  },
-  {
-    "name": "asinh",
-    "implementation": "MEE:asinh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic arcsine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "asinh(N)"
-  },
-  {
-    "name": "acosh",
-    "implementation": "MEE:acosh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic arccosine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "acosh(N)"
-  },
-  {
-    "name": "atanh",
-    "implementation": "MEE:atanh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic arctangent\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "atanh(N)"
-  },
-  {
-    "name": "sinh",
-    "implementation": "MEE:sinh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic sine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "sinh(N)"
-  },
-  {
-    "name": "cosh",
-    "implementation": "MEE:cosh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic cosine\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "cosh(N)"
-  },
-  {
-    "name": "tanh",
-    "implementation": "MEE:tanh",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Hyperbolic tangent\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "tanh(N)"
-  },
-  {
-    "name": "clamp",
-    "implementation": "MEE:clamp",
-    "minimumArity": 3,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "X",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "X (input)"
-      },
-      {
-        "name": "LO",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "LO (input)"
-      },
-      {
-        "name": "HI",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "HI (input)"
-      }
-    ],
-    "documentation": "Clamp X in range [LO; HI]\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "clamp(X, LO, HI)"
-  },
-  {
-    "name": "sign",
-    "implementation": "MEE:sign",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Get the sign\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "sign(N)"
-  },
-  {
-    "name": "trunc",
-    "implementation": "MEE:trunc",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Truncate float\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "trunc(N)"
-  },
-  {
-    "name": "ceil",
-    "implementation": "MEE:ceil",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Round to smallest integer not less than N\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "ceil(N)"
-  },
-  {
-    "name": "floor",
-    "implementation": "MEE:floor",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Round to largest integer not greater than N\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "floor(N)"
-  },
-  {
-    "name": "round",
-    "implementation": "MEE:round",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Round float to nearest integer\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "round(N)"
-  },
-  {
-    "name": "exp",
-    "implementation": "MEE:exp",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Euler's number raised to power N\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "exp(N)"
-  },
-  {
-    "name": "ln",
-    "implementation": "MEE:ln",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Natural (base e) logarithm\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "ln(N)"
-  },
-  {
-    "name": "log",
-    "implementation": "MEE:log",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      },
-      {
-        "name": "B",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "B (input)"
-      }
-    ],
-    "documentation": "Base B logarithm of N using formula ln(N) / ln(B)\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "log(N, B)"
-  },
-  {
-    "name": "log2",
-    "implementation": "MEE:log2",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Base 2 logarithm\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "log2(N)"
-  },
-  {
-    "name": "log10",
-    "implementation": "MEE:log10",
-    "minimumArity": 1,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N (input)"
-      }
-    ],
-    "documentation": "Base 10 logarithm\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "log10(N)"
-  },
-  {
-    "name": "lerp",
-    "implementation": "MEE:lerp",
-    "minimumArity": 3,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "A",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "A (input)"
-      },
-      {
-        "name": "B",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "B (input)"
-      },
-      {
-        "name": "T",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "T (input)"
-      }
-    ],
-    "documentation": "Linearly interpolate A to B based on T [0; 1]\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "lerp(A, B, T)"
-  },
-  {
-    "name": "if",
-    "implementation": "MEE:if",
-    "minimumArity": 3,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "COND",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "COND (input)"
-      },
-      {
-        "name": "YES",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "YES (input)"
-      },
-      {
-        "name": "NO",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "NO (input)"
-      }
-    ],
-    "documentation": "Returns YES if COND is truthy, otherwise NO. Computes both YES and NO regardless of COND\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "if(COND, YES, NO)"
-  },
-  {
-    "name": "pi",
-    "implementation": "MEE:pi",
-    "minimumArity": 0,
-    "variadic": false,
-    "parameters": [],
-    "documentation": "3.141592653589793\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "pi()"
-  },
-  {
-    "name": "tau",
-    "implementation": "MEE:tau",
-    "minimumArity": 0,
-    "variadic": false,
-    "parameters": [],
-    "documentation": "6.283185307179586\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "tau()"
-  },
-  {
-    "name": "e",
-    "implementation": "MEE:e",
-    "minimumArity": 0,
-    "variadic": false,
-    "parameters": [],
-    "documentation": "2.718281828459045\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "e()"
-  },
-  {
-    "name": "hypot",
-    "implementation": "MEE:hypot",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "X",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "X (input)"
-      },
-      {
-        "name": "Y",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "Y (input)"
-      }
-    ],
-    "documentation": "Calculate √x2+y2\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "hypot(X, Y)"
-  },
-  {
-    "name": "hypot3",
-    "implementation": "MEE:hypot3",
-    "minimumArity": 3,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "X",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "X (input)"
-      },
-      {
-        "name": "Y",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "Y (input)"
-      },
-      {
-        "name": "Z",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "Z (input)"
-      }
-    ],
-    "documentation": "Calculate √x2+y2+z2\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "hypot3(X, Y, Z)"
-  },
-  {
-    "name": "gcd",
-    "implementation": "MEE:gcd",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N1",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N1 (input)"
-      },
-      {
-        "name": "N2",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N2 (input)"
-      }
-    ],
-    "documentation": "Greated common divisor\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "gcd(N1, N2)"
-  },
-  {
-    "name": "lcm",
-    "implementation": "MEE:lcm",
-    "minimumArity": 2,
-    "variadic": false,
-    "parameters": [
-      {
-        "name": "N1",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N1 (input)"
-      },
-      {
-        "name": "N2",
-        "variadic": false,
-        "optional": false,
-        "role": "input",
-        "description": "N2 (input)"
-      }
-    ],
-    "documentation": "Least common multiple\n\n[Documentation](https://pil-esolang.github.io/language/cevaluator/#functions)",
-    "source": "https://pil-esolang.github.io/language/cevaluator/#functions",
-    "signature": "lcm(N1, N2)"
-  }
-]
+[{
+  "name": "abs",
+  "params": ["N"],
+  "docs": "Get the absolute value"
+},{
+  "name": "min",
+  "params": ["N1", "N2"],
+  "docs": "Get the minimum value of the two"
+},{
+  "name": "max",
+  "params": ["N1", "N2"],
+  "docs": "Get the maximum value of the two"
+},{
+  "name": "sqrt",
+  "params": ["N"],
+  "docs": "Square root"
+},{
+  "name": "cbrt",
+  "params": ["N"],
+  "docs": "Cube root"
+},{
+  "name": "sin",
+  "params": ["N"],
+  "docs": "Sine"
+},{
+  "name": "cos",
+  "params": ["N"],
+  "docs": "Cosine"
+},{
+  "name": "tan",
+  "params": ["N"],
+  "docs": "Tangent"
+},{
+  "name": "asin",
+  "params": ["N"],
+  "docs": "Arcsine"
+},{
+  "name": "acos",
+  "params": ["N"],
+  "docs": "Arccosine"
+},{
+  "name": "atan",
+  "params": ["N"],
+  "docs": "Arctangent"
+},{
+  "name": "atan2",
+  "params": ["Y", "X"],
+  "docs": "Arctangent of Y / X using signs of arguments to determine the correct quadrant"
+},{
+  "name": "asinh",
+  "params": ["N"],
+  "docs": "Hyperbolic arcsine"
+},{
+  "name": "acosh",
+  "params": ["N"],
+  "docs": "Hyperbolic arccosine"
+},{
+  "name": "atanh",
+  "params": ["N"],
+  "docs": "Hyperbolic arctangent"
+},{
+  "name": "sinh",
+  "params": ["N"],
+  "docs": "Hyperbolic sine"
+},{
+  "name": "cosh",
+  "params": ["N"],
+  "docs": "Hyperbolic cosine"
+},{
+  "name": "tanh",
+  "params": ["N"],
+  "docs": "Hyperbolic tangent"
+},{
+  "name": "clamp",
+  "params": ["X", "LO", "HI"],
+  "docs": "Clamp X in range [LO; HI]"
+},{
+  "name": "sign",
+  "params": ["N"],
+  "docs": "Get the sign"
+},{
+  "name": "trunc",
+  "params": ["N"],
+  "docs": "Truncate float"
+},{
+  "name": "ceil",
+  "params": ["N"],
+  "docs": "Round to smallest integer not less than N"
+},{
+  "name": "floor",
+  "params": ["N"],
+  "docs": "Round to largest integer not greater than N"
+},{
+  "name": "round",
+  "params": ["N"],
+  "docs": "Round float to nearest integer"
+},{
+  "name": "exp",
+  "params": ["N"],
+  "docs": "Euler's number raised to power N"
+},{
+  "name": "ln",
+  "params": ["N"],
+  "docs": "Natural (base e) logarithm"
+},{
+  "name": "log",
+  "params": ["N", "B"],
+  "docs": "Base B logarithm of N using formula ln(N) / ln(B)"
+},{
+  "name": "log2",
+  "params": ["N"],
+  "docs": "Base 2 logarithm"
+},{
+  "name": "log10",
+  "params": ["N"],
+  "docs": "Base 10 logarithm"
+},{
+  "name": "lerp",
+  "params": ["A", "B", "T"],
+  "docs": "Linearly interpolate A to B based on T [0; 1]"
+},{
+  "name": "if",
+  "params": ["COND", "YES", "NO"],
+  "docs": "Returns YES if COND is truthy, otherwise NO. Computes both YES and NO regardless of COND"
+},{
+  "name": "pi",
+  "params": [],
+  "docs": "3.141592653589793"
+},{
+  "name": "tau",
+  "params": [],
+  "docs": "6.283185307179586"
+},{
+  "name": "e",
+  "params": [],
+  "docs": "2.718281828459045"
+},{
+  "name": "hypot",
+  "params": ["X", "Y"],
+  "docs": "Calculate √x2+y2"
+},{
+  "name": "hypot3",
+  "params": ["X", "Y", "Z"],
+  "docs": "Calculate √x2+y2+z2"
+},{
+  "name": "gcd",
+  "params": ["N1", "N2"],
+  "docs": "Greatest common divisor"
+},{
+  "name": "lcm",
+  "params": ["N1", "N2"],
+  "docs": "Least common multiple"
+}]

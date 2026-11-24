@@ -85,20 +85,35 @@ export interface Project {
 	entryUri: string;
 	documents: Map<string, ParsedDocument>;
 	symbols: PilSymbol[];
-	/** `${uri}#${tokenStart}` -> position in include-expanded token order */
 	order: Map<string, number>;
 	issues: ProjectIssue[];
 	includeTargets: Map<string, string>;
 }
 
+export type ParameterRole = "input" | "output" | "inout";
+export type BuiltinStrategy = "sum" | "jmptable" | "call" | "func-call" | "catch" | "valtable" | "make";
+
+export interface RawBuiltin {
+	name: string;
+	args: number;
+	params: [name: string, role: ParameterRole, flag?: "variadic" | "optional"][];
+	docs: string;
+	code?: string;
+	strategy?: BuiltinStrategy;
+}
+
+export interface RawEvaluatorFunction {
+	name: string;
+	params: string[];
+	docs: string;
+}
+
 export interface BuiltinInfo {
 	name: string;
-	implementation: string;
 	minimumArity: number;
 	variadic: boolean;
 	parameters: ParameterInfo[];
 	documentation: string;
-	source: string;
 	signature: string;
-	strategy?: "sum" | "jmptable" | "call" | "func-call" | "catch" | "valtable" | "make";
+	strategy?: BuiltinStrategy;
 }

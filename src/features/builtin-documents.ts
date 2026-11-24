@@ -9,10 +9,8 @@ export function builtinDocument(name, evaluator = false) {
 ${b.documentation}
 
 Parameters:
-${b.parameters.map((p) => `  ${p.name}${p.variadic ? "..." : ""}${p.optional ? "?" : ""} \u2014 ${p.description ?? p.role ?? "value"}`).join("\n")}
+${b.parameters.map((p) => `  ${p.name}${p.variadic ? "..." : ""}${p.optional ? "?" : ""}${evaluator ? "" : ` \u2014 ${p.description ?? p.role ?? "value"}`}`).join("\n")}
 
-Minimum arguments: ${b.minimumArity}${b.variadic ? " (variadic)" : ""}
-
-Documentation: ${b.source}
+${evaluator ? "Arguments" : "Minimum arguments"}: ${b.minimumArity}${b.variadic ? " (variadic)" : ""}
 `;
 }

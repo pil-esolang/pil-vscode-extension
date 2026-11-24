@@ -60,6 +60,10 @@ npm test
 npm run build
 npm run package     # produces pil-vscode-<version>.vsix
 ```
+Or for quickly updating:
+```sh
+npm ci && npm test && npm run package
+```
 
 Source layout: `src/language` (lexer, parser), `src/project` (include graph, symbol resolution, `checks.ts` for redefinitions, `names.ts` for name resolution, argument counts and the constant evaluator), `src/features` (completion, hover, signature help, symbols...), `src/catalog` (built-in data), `src/extension.ts` (VS Code wiring). Only `extension.ts` and `project/service.ts` import `vscode`, so everything else is unit-tested directly.
 
