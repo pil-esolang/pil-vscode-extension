@@ -202,7 +202,7 @@
   "name": "string-pad-right",
   "args": 3,
   "params": [["STRING", "inout"], ["N", "input"], ["CHAR", "input"]],
-  "docs": "dds padding to `STRING` such that it is at least `N` characters in size. Throws if `N` is less or equal to 0. `STRING` - dynamic string, `N` - unsigned integer, `CHAR` - character to pad with."
+  "docs": "Adds padding to `STRING` such that it is at least `N` characters in size. Throws if `N` is less or equal to 0. `STRING` - dynamic string, `N` - unsigned integer, `CHAR` - character to pad with."
 },{
   "name": "string-copy",
   "args": 2,
@@ -1011,6 +1011,11 @@
   "params": [["ARGS", "input", "variadic"]],
   "docs": "Output all `ARGS` to the terminal including a newline. Does not output a separator. `ARGS...` - any value."
 },{
+  "name": "print-lines",
+  "args": 1,
+  "params": [["ARGS", "input", "variadic"]],
+  "docs": "Output all `ARGS` to the terminal. All printed arguments are followed by a newline. `ARGS...` - any value."
+},{
   "name": "printf",
   "args": 1,
   "params": [["FORMAT-STRING", "input"], ["ARG1", "input", "variadic"]],
@@ -1362,6 +1367,11 @@
   "docs": "Create a new structure based on `STRUCT` template and store in `DESTINATION`. `ARGS...` count must match structure's field count. `STRUCT` - structure, `DESTINATION` - container, `ARGS...` - any value.",
   "code": "make STRUCT, DESTINATION, ARGS...",
   "strategy": "make"
+},{
+  "name": "make-no-init",
+  "args": 2,
+  "params": [["STRUCT", "input"], ["DESTINATION", "output"]],
+  "docs": "Create a new structure with all fields set to null and store in `DESTINATION`. `STRUCT` - structure, `DESTINATION` - container."
 },{
   "name": "free",
   "args": 1,
